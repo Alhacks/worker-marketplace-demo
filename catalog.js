@@ -1,5 +1,5 @@
 export const services = [
-{id:'tap',category:'plumbing',title:'Заменить смеситель без лишних хлопот',detail:'Демонтаж старого и установка нового смесителя. Материалы отдельно.',price:1500,unit:'за установку',label:'Для кухни и ванной',icon:'tap',color:'peach'},
+{id:'tap',category:'plumbing',title:'Заменить кран или смеситель',detail:'Демонтаж старого и установка нового смесителя. Материалы отдельно.',price:1500,unit:'за установку',label:'Для кухни и ванной',icon:'tap',color:'peach'},
 {id:'light',category:'electric',title:'Повесить люстру и подключить свет',detail:'Монтаж одного светильника на подготовленное крепление.',price:1200,unit:'за светильник',label:'Свет в доме',icon:'lamp',color:'sage'},
 {id:'shelf',category:'repair',title:'Повесить полки, карнизы или зеркало',detail:'Разметка и крепление одного предмета. Условия зависят от стены.',price:800,unit:'за предмет',label:'Маленькие перемены',icon:'shelf',color:'blue'},
 {id:'wardrobe',category:'furniture',title:'Собрать шкаф или комод по инструкции',detail:'Сборка корпусной мебели из готового комплекта.',price:2500,unit:'за сборку',label:'Каждой вещи своё место',icon:'cabinet',color:'lilac'},
@@ -35,3 +35,4 @@ export function illustration(type){
  };
  return `<svg viewBox="0 0 300 220" aria-hidden="true"><ellipse cx="150" cy="190" rx="82" ry="9" fill="currentColor" opacity=".08"/><circle cx="150" cy="106" r="84" fill="white" opacity=".38"/><g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">${drawings[type]||drawings.box}</g></svg>`;
 }
+
