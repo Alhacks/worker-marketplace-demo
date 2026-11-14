@@ -12,9 +12,10 @@ export const services = [
 {id:'desk',category:'furniture',title:'Собрать удобное рабочее место',detail:'Сборка письменного стола из готового комплекта деталей.',price:1600,unit:'за стол',label:'Место для ваших идей',icon:'shelf',color:'lilac'},
 {id:'windows',category:'cleaning',title:'Вымыть окна и впустить больше света',detail:'Мытьё доступных окон изнутри. Высотные работы не включены.',price:500,unit:'за створку',label:'Прозрачный результат',icon:'window',color:'blue'}
 ];
+const categoryTerms={plumbing:'сантехника сантехник водопровод трубы',electric:'электрика электрик свет розетки',repair:'мелкий ремонт мастер на час',finish:'отделка отделочник ремонт стен',furniture:'мебель сборка сборщик',appliances:'бытовая техника ремонт техники',cleaning:'уборка клининг уборщик',moving:'переезд переезды грузчик перевозка'};
 export function filterServices(query='',category='all',sort='default') {
  const q=query.toLocaleLowerCase('ru').trim();
- const result=services.filter(s=>(category==='all'||s.category===category)&&(!q||(s.title+' '+s.detail+' '+s.label).toLocaleLowerCase('ru').includes(q)));
+ const result=services.filter(s=>(category==='all'||s.category===category)&&(!q||(s.title+' '+s.detail+' '+s.label+' '+categoryTerms[s.category]).toLocaleLowerCase('ru').includes(q)));
  if(sort==='price-up')result.sort((a,b)=>a.price-b.price);
  if(sort==='price-down')result.sort((a,b)=>b.price-a.price);
  return result;
