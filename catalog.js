@@ -4,20 +4,19 @@ export const services = [
 {id:'shelf',category:'repair',title:'Повесить полки, карнизы или зеркало',detail:'Разметка и крепление одного предмета. Условия зависят от стены.',price:800,unit:'за предмет',label:'Маленькие перемены',icon:'shelf',color:'blue'},
 {id:'wardrobe',category:'furniture',title:'Собрать шкаф или комод по инструкции',detail:'Сборка корпусной мебели из готового комплекта.',price:2500,unit:'за сборку',label:'Каждой вещи своё место',icon:'cabinet',color:'lilac'},
 {id:'wall',category:'finish',title:'Обновить стены: покраска комнаты',detail:'Нанесение краски на подготовленную поверхность. Краска отдельно.',price:350,unit:'за м²',label:'Новый цвет дома',icon:'roller',color:'peach'},
-{id:'washer',category:'appliances',title:'Найти причину поломки стиральной машины',detail:'Диагностика неисправности. Ремонт согласуется после осмотра.',price:900,unit:'за диагностику',label:'Техника снова в деле',icon:'washer',color:'blue'},
-{id:'clean',category:'cleaning',title:'Навести порядок после ремонта',detail:'Уборка поверхностей и строительной пыли. Объём уточняется.',price:180,unit:'за м²',label:'Пора выдохнуть',icon:'clean',color:'sage'},
+{id:'washer',category:'appliances',title:'Найти причину поломки стиральной машины',detail:'Диагностика неисправности. Ремонт согласуется после осмотра.',price:900,unit:'за диагностику',label:'Диагностика техники',icon:'washer',color:'blue'},
+{id:'clean',category:'cleaning',title:'Убрать квартиру после ремонта',detail:'Уборка поверхностей и строительной пыли. Объём уточняется.',price:180,unit:'за м²',label:'Пора выдохнуть',icon:'clean',color:'sage'},
 {id:'move',category:'moving',title:'Помочь с переездом и тяжёлыми вещами',detail:'Помощь грузчика. Транспорт, этаж и время согласуются отдельно.',price:700,unit:'за час',label:'На новом месте',icon:'box',color:'lilac'},
 {id:'socket',category:'electric',title:'Заменить розетку или выключатель',detail:'Замена механизма в существующем месте установки.',price:600,unit:'за точку',label:'Полезные мелочи',icon:'socket',color:'peach'},
 {id:'sink',category:'plumbing',title:'Установить мойку и подключить сифон',detail:'Установка в готовый вырез, подключение и проверка соединений.',price:2200,unit:'за установку',label:'Удобная кухня',icon:'tap',color:'sage'},
-{id:'desk',category:'furniture',title:'Собрать удобное рабочее место',detail:'Сборка письменного стола из готового комплекта деталей.',price:1600,unit:'за стол',label:'Место для ваших идей',icon:'shelf',color:'lilac'},
-{id:'windows',category:'cleaning',title:'Вымыть окна и впустить больше света',detail:'Мытьё доступных окон изнутри. Высотные работы не включены.',price:500,unit:'за створку',label:'Прозрачный результат',icon:'window',color:'blue'}
+{id:'desk',category:'furniture',title:'Собрать письменный стол',detail:'Сборка письменного стола из готового комплекта деталей.',price:1600,unit:'за стол',label:'Место для ваших идей',icon:'shelf',color:'lilac'},
+{id:'windows',category:'cleaning',title:'Вымыть окна изнутри',detail:'Мытьё доступных окон изнутри. Высотные работы не включены.',price:500,unit:'за створку',label:'Прозрачный результат',icon:'window',color:'blue'}
 ];
 const categoryTerms={plumbing:'сантехника сантехник водопровод трубы',electric:'электрика электрик свет розетки',repair:'мелкий ремонт мастер на час',finish:'отделка отделочник ремонт стен',furniture:'мебель сборка сборщик',appliances:'бытовая техника ремонт техники',cleaning:'уборка клининг уборщик',moving:'переезд переезды грузчик перевозка'};
 export function filterServices(query='',category='all',sort='default') {
  const q=query.toLocaleLowerCase('ru').trim();
  const result=services.filter(s=>(category==='all'||s.category===category)&&(!q||(s.title+' '+s.detail+' '+s.label+' '+categoryTerms[s.category]).toLocaleLowerCase('ru').includes(q)));
- if(sort==='price-up')result.sort((a,b)=>a.price-b.price);
- if(sort==='price-down')result.sort((a,b)=>b.price-a.price);
+ // Different jobs and pricing units are not comparable; keep neutral catalog order.
  return result;
 }
 export function illustration(type){

@@ -12,3 +12,23 @@
 /* FAQ breathing room, especially on narrow screens */
 .faq details{padding:23px 0}.faq summary{line-height:1.55;padding-block:4px}.faq p{margin:15px 0 5px;line-height:1.8}
 @media(max-width:480px){.faq-section{padding:35px 0 40px;gap:20px}.faq details{padding:25px 0}.faq summary{font-size:15px;line-height:1.6;padding-block:5px}.faq p{margin:18px 0 7px;font-size:14px;line-height:1.8}}
+
+/* Accessible targets and readable text, audit corrections */
+.quick-search button,.filter-chips button,.text-button,.card-action{min-height:44px}
+.card-action{width:44px;height:44px}
+.service-body>p,.service-bottom span,.demo-label,.service-art>span{font-size:12px}
+.demo-label{color:#59614f}.service-bottom span{color:#59614f}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #355941;outline-offset:3px}
+@media(max-width:480px){
+.category-tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.category-tiles strong{font-size:14px}.category-tiles button{min-height:96px}
+.service-grid{grid-template-columns:1fr;gap:20px}
+.service-art{height:185px}.service-body{padding:18px}.service-title{font-size:18px;min-height:44px}
+.service-body>p{font-size:14px}.service-bottom span,.demo-label,.service-art>span{font-size:12px}
+.service-bottom strong{font-size:20px}
+.hero-copy>p,.hero-search input{font-size:16px}.hero-search button{font-size:14px;min-height:44px}
+.quick-search button,.filter-chips button{font-size:14px;padding:10px 14px}
+.value-row{font-size:14px;line-height:1.6;gap:12px}
+.journey p,.trust-points p,.custom-banner>div>p,.master-banner p,.faq p{font-size:15px}
+.trust-points strong{font-size:16px}.master-banner .button{font-size:14px;min-height:44px}
+}
