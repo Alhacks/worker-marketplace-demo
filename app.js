@@ -1,5 +1,5 @@
-import {services,filterServices,illustration} from './catalog.js';
-import {categories,statuses,validateRequest,advance,addReview,demoMasters,invite,respond,selectMaster,confirmDemoPayment} from './model.js';
+import {services,filterServices,illustration} from './catalog.js?v=0.2.1';
+import {categories,statuses,validateRequest,advance,addReview,demoMasters,invite,respond,selectMaster,confirmDemoPayment} from './model.js?v=0.2.1';
 const $=s=>document.querySelector(s), main=$('#main'),dialog=$('#request-dialog'),form=$('#request-form');
 const key='delo-ryadom-prototype-v1';
 let tasks=[];
